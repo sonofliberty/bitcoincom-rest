@@ -8,6 +8,7 @@ use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 use Psr\Http\Client\ClientInterface;
 use SonOfLiberty\BitcoinComRest\Api\Address;
+use SonOfLiberty\BitcoinComRest\Api\Block;
 
 class Client
 {
@@ -37,5 +38,10 @@ class Client
     public function address(): Address
     {
         return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Address($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function block(): Block
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Block($this->restUrl, $this->httpClient, $this->serializer));
     }
 }
