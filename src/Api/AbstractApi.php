@@ -30,7 +30,8 @@ abstract class AbstractApi
     {
         $request = $request
             ->withAddedHeader('Accept', 'application/json')
-            ->withAddedHeader('Content-Type', 'application/json');
+            ->withAddedHeader('Content-Type', 'application/json')
+            ->withAddedHeader('User-Agent', 'sonofliberty/bitcoincom-rest');
 
         return $this->httpClient->send($request);
     }

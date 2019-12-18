@@ -22,7 +22,7 @@ class Block extends AbstractApi
         return $model;
     }
 
-    public function bulkDetailsByHash(array $hashes): array
+    public function detailsByHashBulk(array $hashes): array
     {
         $body = json_encode(['hashes' => $hashes]);
         $request = $this->messageFactory->createRequest('POST', "{$this->baseUrl()}/detailsByHash", [], $body);
@@ -47,7 +47,7 @@ class Block extends AbstractApi
 
 //    This endpoint doesn't work properly
 //
-//    public function bulkDetailsByHeight(array $heights): array
+//    public function detailsByHeightBulk(array $heights): array
 //    {
 //        $body = json_encode(['heights' => $heights]);
 //        $request = $this->messageFactory->createRequest('POST', "{$this->baseUrl()}/detailsByHeight", [], $body);

@@ -9,6 +9,11 @@ use JMS\Serializer\SerializerInterface;
 use Psr\Http\Client\ClientInterface;
 use SonOfLiberty\BitcoinComRest\Api\Address;
 use SonOfLiberty\BitcoinComRest\Api\Block;
+use SonOfLiberty\BitcoinComRest\Api\Blockchain;
+use SonOfLiberty\BitcoinComRest\Api\Control;
+use SonOfLiberty\BitcoinComRest\Api\Mining;
+use SonOfLiberty\BitcoinComRest\Api\Rawtransactions;
+use SonOfLiberty\BitcoinComRest\Api\Transaction;
 
 class Client
 {
@@ -43,5 +48,30 @@ class Client
     public function block(): Block
     {
         return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Block($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function blockchain(): Blockchain
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Blockchain($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function control(): Control
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Control($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function mining(): Mining
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Mining($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function rawtransactions(): Rawtransactions
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Rawtransactions($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function transaction(): Transaction
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Transaction($this->restUrl, $this->httpClient, $this->serializer));
     }
 }
