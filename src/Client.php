@@ -14,6 +14,7 @@ use SonOfLiberty\BitcoinComRest\Api\Control;
 use SonOfLiberty\BitcoinComRest\Api\Mining;
 use SonOfLiberty\BitcoinComRest\Api\Rawtransactions;
 use SonOfLiberty\BitcoinComRest\Api\Transaction;
+use SonOfLiberty\BitcoinComRest\Api\Util;
 
 class Client
 {
@@ -73,5 +74,10 @@ class Client
     public function transaction(): Transaction
     {
         return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Transaction($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function util(): Util
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Util($this->restUrl, $this->httpClient, $this->serializer));
     }
 }
