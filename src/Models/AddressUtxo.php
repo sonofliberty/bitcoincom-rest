@@ -15,7 +15,7 @@ class AddressUtxo
     private $utxos = [];
 
     /**
-     * @var string
+     * @var string|null
      *
      * @Serializer\Type("string")
      * @Serializer\SerializedName("legacyAddress")
@@ -23,7 +23,7 @@ class AddressUtxo
     private $legacyAddress;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @Serializer\Type("string")
      * @Serializer\SerializedName("cashAddress")
@@ -31,7 +31,7 @@ class AddressUtxo
     private $cashAddress;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @Serializer\Type("string")
      * @Serializer\SerializedName("slpAddress")
@@ -39,7 +39,7 @@ class AddressUtxo
     private $slpAddress;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @Serializer\Type("string")
      * @Serializer\SerializedName("scriptPubKey")
@@ -47,7 +47,7 @@ class AddressUtxo
     private $scriptPubKey;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @Serializer\Type("string")
      * @Serializer\SerializedName("asm")
@@ -63,41 +63,41 @@ class AddressUtxo
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLegacyAddress(): string
+    public function getLegacyAddress(): ?string
     {
         return $this->legacyAddress;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCashAddress(): string
+    public function getCashAddress(): ?string
     {
         return $this->cashAddress;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getSlpAddress(): string
+    public function getSlpAddress(): ?string
     {
         return $this->slpAddress;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getScriptPubKey(): string
+    public function getScriptPubKey(): ?string
     {
         return $this->scriptPubKey;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAsm(): string
+    public function getAsm(): ?string
     {
         return $this->asm;
     }

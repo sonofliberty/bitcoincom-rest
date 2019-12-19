@@ -23,7 +23,7 @@ class AddressTransactions
     private $transactions = [];
 
     /**
-     * @var string
+     * @var string|null
      *
      * @Serializer\Type("string")
      * @Serializer\SerializedName("legacyAddress")
@@ -31,7 +31,7 @@ class AddressTransactions
     private $legacyAddress;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @Serializer\Type("string")
      * @Serializer\SerializedName("cashAddress")
@@ -63,17 +63,17 @@ class AddressTransactions
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getLegacyAddress(): string
+    public function getLegacyAddress(): ?string
     {
         return $this->legacyAddress;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCashAddress(): string
+    public function getCashAddress(): ?string
     {
         return $this->cashAddress;
     }
