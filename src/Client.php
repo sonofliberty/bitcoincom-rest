@@ -10,6 +10,7 @@ use Psr\Http\Client\ClientInterface;
 use SonOfLiberty\BitcoinComRest\Api\Address;
 use SonOfLiberty\BitcoinComRest\Api\Block;
 use SonOfLiberty\BitcoinComRest\Api\Blockchain;
+use SonOfLiberty\BitcoinComRest\Api\CashAccounts;
 use SonOfLiberty\BitcoinComRest\Api\Control;
 use SonOfLiberty\BitcoinComRest\Api\Mining;
 use SonOfLiberty\BitcoinComRest\Api\Rawtransactions;
@@ -85,5 +86,10 @@ class Client
     public function slp(): Slp
     {
         return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Slp($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function cashAccounts(): CashAccounts
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new CashAccounts($this->restUrl, $this->httpClient, $this->serializer));
     }
 }
