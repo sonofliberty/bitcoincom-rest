@@ -17,7 +17,7 @@ class TransactionDetails
     /**
      * @var int
      *
-     * @Serializer\Type("string")
+     * @Serializer\Type("integer")
      * @Serializer\SerializedName("version")
      */
     private $version = 0;
@@ -25,7 +25,7 @@ class TransactionDetails
     /**
      * @var int
      *
-     * @Serializer\Type("string")
+     * @Serializer\Type("integer")
      * @Serializer\SerializedName("locktime")
      */
     private $locktime = 0;
@@ -87,6 +87,14 @@ class TransactionDetails
     private $blocktime = 0;
 
     /**
+     * @var bool|null
+     *
+     * @Serializer\Type("boolean")
+     * @Serializer\SerializedName("isCoinBase")
+     */
+    private $isCoinBase;
+
+    /**
      * @var float
      *
      * @Serializer\Type("float")
@@ -103,12 +111,12 @@ class TransactionDetails
     private $size = 0;
 
     /**
-     * @var float
+     * @var float|null
      *
      * @Serializer\Type("float")
      * @Serializer\SerializedName("valueIn")
      */
-    private $valueIn = 0.0;
+    private $valueIn;
 
     /**
      * @var float
@@ -199,6 +207,14 @@ class TransactionDetails
     }
 
     /**
+     * @return bool|null
+     */
+    public function getIsCoinBase(): ?bool
+    {
+        return $this->isCoinBase;
+    }
+
+    /**
      * @return float
      */
     public function getValueOut(): float
@@ -215,9 +231,9 @@ class TransactionDetails
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getValueIn(): float
+    public function getValueIn(): ?float
     {
         return $this->valueIn;
     }

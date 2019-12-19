@@ -39,6 +39,14 @@ class ScriptPubKey
     private $type;
 
     /**
+     * @var int|null
+     *
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("reqSigs")
+     */
+    private $reqSigs;
+
+    /**
      * @return string
      */
     public function getHex(): string
@@ -68,5 +76,13 @@ class ScriptPubKey
     public function getType(): string
     {
         return $this->type;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getReqSigs(): ?int
+    {
+        return $this->reqSigs;
     }
 }

@@ -6,6 +6,7 @@ use SonOfLiberty\BitcoinComRest\Models\AddressDetails;
 use SonOfLiberty\BitcoinComRest\Models\AddressTransactions;
 use SonOfLiberty\BitcoinComRest\Models\AddressUnconfirmed;
 use SonOfLiberty\BitcoinComRest\Models\AddressUtxo;
+use SonOfLiberty\BitcoinComRest\Models\FromXPub;
 
 class Address extends AbstractApi
 {
@@ -48,7 +49,7 @@ class Address extends AbstractApi
         return $model;
     }
 
-    public function bulkUtxo(array $addresses): array
+    public function utxoBulk(array $addresses): array
     {
         $body = json_encode(['addresses' => $addresses]);
         $request = $this->messageFactory->createRequest('POST', "{$this->baseUrl()}/utxo", [], $body);
@@ -71,7 +72,7 @@ class Address extends AbstractApi
         return $model;
     }
 
-    public function bulkUnconfirmed(array $addresses): array
+    public function unconfirmedBulk(array $addresses): array
     {
         $body = json_encode(['addresses' => $addresses]);
         $request = $this->messageFactory->createRequest('POST', "{$this->baseUrl()}/unconfirmed", [], $body);
@@ -94,7 +95,7 @@ class Address extends AbstractApi
         return $model;
     }
 
-    public function bulkTransactions(array $addresses): array
+    public function transactionsBulk(array $addresses): array
     {
         $body = json_encode(['addresses' => $addresses]);
         $request = $this->messageFactory->createRequest('POST', "{$this->baseUrl()}/transactions", [], $body);
@@ -102,6 +103,17 @@ class Address extends AbstractApi
 
         /** @var AddressTransactions[] $model */
         $model = $this->deserialize($response->getBody()->getContents(), "array<" . AddressTransactions::class . ">");
+
+        return $model;
+    }
+
+    public function fromXPub(string $address, ?string $hdPath = null): FromXPub
+    {
+        $request = $this->messageFactory->createRequest('GET', "{$this->baseUrl()}/fromXPub/$address?" . http_build_query(['hdPath' => $hdPath]));
+        $response = $this->send($request);
+
+        /** @var FromXPub $model */
+        $model = $this->deserialize($response->getBody()->getContents(), FromXPub::class);
 
         return $model;
     }
