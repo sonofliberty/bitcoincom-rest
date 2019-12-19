@@ -13,6 +13,7 @@ use SonOfLiberty\BitcoinComRest\Api\Blockchain;
 use SonOfLiberty\BitcoinComRest\Api\Control;
 use SonOfLiberty\BitcoinComRest\Api\Mining;
 use SonOfLiberty\BitcoinComRest\Api\Rawtransactions;
+use SonOfLiberty\BitcoinComRest\Api\Slp;
 use SonOfLiberty\BitcoinComRest\Api\Transaction;
 use SonOfLiberty\BitcoinComRest\Api\Util;
 
@@ -79,5 +80,10 @@ class Client
     public function util(): Util
     {
         return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Util($this->restUrl, $this->httpClient, $this->serializer));
+    }
+
+    public function slp(): Slp
+    {
+        return isset($this->factory[__FUNCTION__]) ? $this->factory[__FUNCTION__] : (new Slp($this->restUrl, $this->httpClient, $this->serializer));
     }
 }

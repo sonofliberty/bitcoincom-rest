@@ -17,7 +17,7 @@ class TransactionDetails
     /**
      * @var int
      *
-     * @Serializer\Type("string")
+     * @Serializer\Type("integer")
      * @Serializer\SerializedName("version")
      */
     private $version = 0;
@@ -25,7 +25,7 @@ class TransactionDetails
     /**
      * @var int
      *
-     * @Serializer\Type("string")
+     * @Serializer\Type("integer")
      * @Serializer\SerializedName("locktime")
      */
     private $locktime = 0;
