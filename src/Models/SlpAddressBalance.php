@@ -39,9 +39,9 @@ class SlpAddressBalance
     private $tokenId;
 
     /**
-     * @var int
+     * @var float
      *
-     * @Serializer\Type("integer")
+     * @Serializer\Type("float")
      * @Serializer\SerializedName("balance")
      */
     private $balance = 0;
@@ -89,7 +89,7 @@ class SlpAddressBalance
     /**
      * @return int
      */
-    public function getBalance(): int
+    public function getBalance(): float
     {
         return $this->balance;
     }

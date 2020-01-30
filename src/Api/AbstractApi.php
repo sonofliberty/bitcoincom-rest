@@ -2,9 +2,9 @@
 
 namespace SonOfLiberty\BitcoinComRest\Api;
 
+use GuzzleHttp\ClientInterface;
 use Http\Message\MessageFactory\GuzzleMessageFactory;
 use JMS\Serializer\SerializerInterface;
-use GuzzleHttp\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 

@@ -15,7 +15,6 @@
         "ext-json": "*",
         "php-http/message": "^1.8",
         "jms/serializer": "^3.4",
-        "psr/http-client": "^1.0",
         "guzzlehttp/guzzle": "^6.5"
     },
     "require-dev": {

@@ -3,10 +3,10 @@
 namespace SonOfLiberty\BitcoinComRest;
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use GuzzleHttp\ClientInterface;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
-use Psr\Http\Client\ClientInterface;
 use SonOfLiberty\BitcoinComRest\Api\Address;
 use SonOfLiberty\BitcoinComRest\Api\Block;
 use SonOfLiberty\BitcoinComRest\Api\Blockchain;

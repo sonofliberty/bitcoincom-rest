@@ -15,9 +15,9 @@ class SlpBalance
     private $tokenId;
 
     /**
-     * @var int
+     * @var float
      *
-     * @Serializer\Type("integer")
+     * @Serializer\Type("float")
      * @Serializer\SerializedName("balance")
      */
     private $balance = 0;
@@ -55,9 +55,9 @@ class SlpBalance
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getBalance(): int
+    public function getBalance(): float
     {
         return $this->balance;
     }
