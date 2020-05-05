@@ -36,8 +36,8 @@ class Client
         ?SerializerInterface $serializer = null
     ) {
         $this->restUrl = $restUrl;
-        $this->httpClient = null !== $httpClient ?: new \GuzzleHttp\Client();
-        $this->serializer = null !== $serializer ?: SerializerBuilder::create()->build();
+        $this->httpClient = null !== $httpClient ? $httpClient : new \GuzzleHttp\Client();
+        $this->serializer = null !== $serializer ? $serializer : SerializerBuilder::create()->build();
         if ($this->serializer instanceof Serializer) {
             AnnotationRegistry::registerLoader('class_exists');
         }

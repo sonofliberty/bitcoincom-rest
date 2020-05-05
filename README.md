@@ -4,7 +4,7 @@ Easy to use PHP library for interacting with [rest.bitcoin.com](https://rest.bit
 
 ## Installation
 
-`composer install sonofliberty/bitcoincom-rest`
+`composer require sonofliberty/bitcoincom-rest`
 
 ## Get started
 
