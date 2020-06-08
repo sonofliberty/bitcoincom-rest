@@ -17,7 +17,7 @@ class SlpToken
     /**
      * @var \DateTime|null
      *
-     * @Serializer\Type("DateTime<'Y-m-d H:i:s'>")
+     * @Serializer\Type("DateTime")
      * @Serializer\SerializedName("timestamp")
      */
     private $timestamp;
