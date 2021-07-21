@@ -5,8 +5,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Alex Winter",
-            "email": "hi@alexwinter.me"
+            "name" : "Thong Ngo",
+            "email" : "quangthong1011@gmail.com"
         }
     ],
     "minimum-stability": "stable",
