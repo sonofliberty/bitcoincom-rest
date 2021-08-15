@@ -15,10 +15,10 @@ $client = new Client();
 
 // get address details
 $ addressDetails = $ client-> address () -> chi tiết ('bitcoincash:qzmr3xtzryf8ufzpnevy6kfnf2jqgpk3j5qnk6gkyn');
-Confirmed
-95463 confirmations
-Block id 
-601861
+
+block id: 601861
+
+
 Trong khi đó, bạn sẽ không gặp khó khăn gì
 // get slp message code balance
 $ balances = $ client-> slp () -> balancesForAddress ('simpleledger:qz9tzs6d5097ejpg279rg0rnlhz546q4fsnck9wh5m');
